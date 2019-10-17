@@ -2,9 +2,10 @@ package subscriber
 
 import (
 	"context"
+
 	"github.com/micro/go-micro/util/log"
 
-	user "micro-part01/user-srv/proto/user"
+	user "github.com/entere/go-demos/micro-part01/user-srv/proto/user"
 )
 
 type User struct{}

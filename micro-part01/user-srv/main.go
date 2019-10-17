@@ -6,7 +6,7 @@ import (
 	"micro-part01/user-srv/handler"
 	"micro-part01/user-srv/subscriber"
 
-	user "micro-part01/user-srv/proto/user"
+	user "github.com/entere/go-demos/micro-part01/user-srv/proto/user"
 )
 
 func main() {
