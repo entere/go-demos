@@ -3,10 +3,10 @@ package main
 import (
 	"github.com/micro/go-micro/util/log"
 	"github.com/micro/go-micro"
-	"micro-day01/user-srv/handler"
-	"micro-day01/user-srv/subscriber"
+	"micro-part01/user-srv/handler"
+	"micro-part01/user-srv/subscriber"
 
-	user "micro-day01/user-srv/proto/user"
+	user "micro-part01/user-srv/proto/user"
 )
 
 func main() {

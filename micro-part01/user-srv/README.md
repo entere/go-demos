@@ -5,7 +5,7 @@ This is the User service
 Generated with
 
 ```
-micro new micro-day01/user-srv --namespace=mu.micro.ci --alias=user --type=srv
+micro new micro-part01/user-srv --namespace=mu.micro.ci --alias=user --type=srv
 ```
 
 ## Getting Started
