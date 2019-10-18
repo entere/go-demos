@@ -5,7 +5,7 @@ This is the User service
 Generated with
 
 ```
-micro new micro-part01/user-srv --namespace=mu.micro.ci --alias=user --type=srv
+micro new micro-part01/user-srv --namespace=mu.micro.ci --alias=user --type=srv --gopath=false
 ```
 
 ## Getting Started
@@ -53,3 +53,13 @@ Build a docker image
 ```
 make docker
 ```
+
+
+## 启动consul
+consul agent -dev -ui
+
+http://localhost:8500/ui
+
+
+启动成功，我们调用Service.QueryUserByName测试一下服务是否正常:
+micro --registry=consul call mu.micro.ci.srv.user User.QueryUserByName '{"userName":"entere"}'

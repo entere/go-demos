@@ -8,6 +8,7 @@ import (
 	user "github.com/entere/go-demos/micro-part01/user-srv/proto/user"
 )
 
+// User ...
 type User struct{}
 
 // Call is a single request handler called via client.Call or the generated client code
@@ -45,4 +46,13 @@ func (e *User) PingPong(ctx context.Context, stream user.User_PingPongStream) er
 			return err
 		}
 	}
+}
+
+// QueryUserByName ..
+func (e *User) QueryUserByName(ctx context.Context, req *user.Request, rsp *user.Response) error {
+	userName := req.GetUserName()
+	rsp.Name = userName
+	rsp.Pwd = "******"
+
+	return nil
 }

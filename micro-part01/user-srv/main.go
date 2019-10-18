@@ -1,17 +1,26 @@
 package main
 
 import (
-	"github.com/micro/go-micro/util/log"
+	"github.com/entere/go-demos/micro-part01/user-srv/handler"
+	"github.com/entere/go-demos/micro-part01/user-srv/subscriber"
 	"github.com/micro/go-micro"
-	"micro-part01/user-srv/handler"
-	"micro-part01/user-srv/subscriber"
+	"github.com/micro/go-micro/registry"
+	"github.com/micro/go-micro/registry/consul"
+	"github.com/micro/go-micro/util/log"
 
 	user "github.com/entere/go-demos/micro-part01/user-srv/proto/user"
 )
 
 func main() {
+	// New Registry 使用consul注册
+	reg := consul.NewRegistry(func(op *registry.Options) {
+		op.Addrs = []string{
+			"127.0.0.1:8500",
+		}
+	})
 	// New Service
 	service := micro.NewService(
+		micro.Registry(reg),
 		micro.Name("mu.micro.ci.srv.user"),
 		micro.Version("latest"),
 	)

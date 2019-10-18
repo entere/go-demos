@@ -29,7 +29,7 @@ func main() {
 	)
 	server.Init()
 
-	pb.RegisterUserServiceHandler(server.Server(), &User{})
+	pb.RegisterUserServiceHandler(server.Server(), new(User))
 
 	if err := server.Run(); err != nil {
 		log.Fatalf("failed to serve: %v", err)
