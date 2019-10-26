@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package io.github.entere.srv.user;
+
+service User {
+	rpc QueryUserByID(QueryRequest) returns (QueryResponse) {}
+}
+
+message Message {
+	string say = 1;
+}
+
+message Request {
+	string name = 1;
+}
+
+message Response {
+	string msg = 1;
+}
+
+message StreamingRequest {
+	int64 count = 1;
+}
+
+message StreamingResponse {
+	int64 count = 1;
+}
+
+message Ping {
+	int64 stroke = 1;
+}
+
+message Pong {
+	int64 stroke = 1;
+}
+
+
+
+message UserInfo {
+    string userID = 1;
+    string nickname = 2;
+    int32 gender = 3;
+    uint64 createdAt = 4;
+    uint64 updatedAt = 5;
+}
+
+
+message Error {
+    int32 code = 1;
+    string status = 2;
+}
+
+
+message QueryRequest {
+    string userID = 1;
+    
+}
+
+message QueryResponse {
+    bool success = 1;
+    Error error = 2;
+    UserInfo userInfo = 3;
+}

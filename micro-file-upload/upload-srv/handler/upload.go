@@ -18,7 +18,8 @@ type Upload struct{}
 func (e *Upload) FileUpload(ctx context.Context, req *upload.FileRequest, rsp *upload.Response) error {
 	log.Log("Received Upload.FileUpload request")
 	// 开始文件上传
-	file, err := os.OpenFile("./"+req.FileName, os.O_CREATE|os.O_RDWR, 0644)
+	file, err := os.OpenFile("./upload-"+req.FileName, os.O_CREATE|os.O_RDWR, 0644)
+
 	if err != nil {
 		fmt.Println("文件打开失败")
 		rsp.Msg = "文件上传失败：打开失败"

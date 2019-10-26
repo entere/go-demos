@@ -1,0 +1,49 @@
+runmode: debug               # 开发模式, debug, release, test
+addr: :8000                    # HTTP绑定端口
+name: ci-wadp-game              # API Server的名字
+url: http://127.0.0.1:8000   # pingServer函数请求的API服务器的ip:port
+max_ping_count: 10           # pingServer函数尝试的次数
+env_prefix: CODEISLAND       # 读取环境变量的前缀为envPrefix
+time_format: 20060102
+
+log:
+  root_path: runtime/
+  save_path: logs/
+  save_name: log
+  file_ext: log    #扩展名
+  
+ 
+
+jwt:
+  secret: XsX20LwAEeUQpCcXcmbzt0yI0x0sObUQ
+  exp_gap_time: 24            # 24小时后过期
+
+db:
+  name: user_mod
+  addr: 127.0.0.1:3306
+  username: root
+  password: 123456
+  max_open_conns: 2000
+  max_idle_conns: 2000
+
+thought_db:
+  name: ci_institution_thought
+  addr: rm-2ze3ak07r3737a9utoo.mysql.rds.aliyuncs.com:3306
+  username: t_raccooncode
+  password: code#raccoon@9i8
+  max_open_conns: 2000
+  max_idle_conns: 2000
+
+redis:
+  addr: 127.0.0.1:6379
+  password: 123456
+  max_idle: 1024
+  max_active: 1024
+  wait: true
+  idle_timeout: 180
+
+  connect_timeout: 1
+  read_timeout: 1
+  write_timeout: 1
+  
+  
