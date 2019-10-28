@@ -39,9 +39,11 @@ message Pong {
 message UserInfo {
     string userID = 1;
     string nickname = 2;
-    int32 gender = 3;
-    uint64 createdAt = 4;
-    uint64 updatedAt = 5;
+    string mobile = 3;
+    string avatar_url = 4;
+    int32 gender = 5;
+    uint64 createdAt = 6;
+    uint64 updatedAt = 7;
 }
 
 
